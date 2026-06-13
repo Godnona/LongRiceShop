@@ -1,0 +1,20 @@
+using UnityEngine;
+
+public class PopupGrilledPorkChopRice : BasePopup
+{
+    protected override void Awake()
+    {
+        base.Awake();
+
+        Debug.Log("Dừng spawn Người khi hiện popup");
+    }
+
+    public override void Hide()
+    {
+        AudioManager.Instance.PlaySFX(AudioClipName.UIClick);
+
+        Debug.Log("Bắt đầu spawn Người lại khi ẩn popup");
+        
+        base.Hide();
+    }
+}
